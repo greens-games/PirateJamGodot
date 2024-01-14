@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6mamnnj6we60"]
+
+[ext_resource type="Script" path="res://entities/player.gd" id="1_v8uey"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tsnjg"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2uk1u"]
+
+[sub_resource type="Gradient" id="Gradient_3tp68"]
+offsets = PackedFloat32Array(0, 0.344156)
+colors = PackedColorArray(0, 0, 0.741176, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_smfb1"]
+gradient = SubResource("Gradient_3tp68")
+fill_from = Vector2(1, 0)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_v8uey")
+metadata/_edit_group_ = true
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_tsnjg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(-2.38419e-06, 8.64267e-06)
+scale = Vector2(18, 15)
+mesh = SubResource("CapsuleMesh_2uk1u")
+texture = SubResource("GradientTexture2D_smfb1")

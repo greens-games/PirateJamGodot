@@ -1,0 +1,158 @@
+[gd_scene load_steps=10 format=3 uid="uid://cvlcxv574q7e5"]
+
+[ext_resource type="PackedScene" uid="uid://c6mamnnj6we60" path="res://entities/player.tscn" id="1_tntlf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vxutl"]
+
+[sub_resource type="Gradient" id="Gradient_488it"]
+colors = PackedColorArray(0, 0.113725, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_htfqx"]
+gradient = SubResource("Gradient_488it")
+fill_from = Vector2(1, 0)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pk5x0"]
+diffuse_texture = SubResource("GradientTexture2D_htfqx")
+
+[sub_resource type="PrismMesh" id="PrismMesh_efas5"]
+
+[sub_resource type="Gradient" id="Gradient_4eh70"]
+colors = PackedColorArray(0.694118, 1, 1, 1, 0.466667, 0.466667, 0.466667, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l5b2v"]
+gradient = SubResource("Gradient_4eh70")
+fill_from = Vector2(1, 0.00917431)
+fill_to = Vector2(1, 0.288991)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb75d"]
+size = Vector2(0.906527, 0.19636)
+
+[node name="Main" type="Node2D"]
+
+[node name="Terrain" type="MeshInstance2D" parent="."]
+position = Vector2(574, 330)
+scale = Vector2(1145, 656)
+mesh = SubResource("BoxMesh_vxutl")
+texture = SubResource("CanvasTexture_pk5x0")
+
+[node name="Player" parent="." instance=ExtResource("1_tntlf")]
+position = Vector2(500, 265)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(428, -400)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="StaticBody2D"]
+position = Vector2(342, 506)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+mesh = SubResource("PrismMesh_efas5")
+texture = SubResource("GradientTexture2D_l5b2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(341, 547.5)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+shape = SubResource("RectangleShape2D_nb75d")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(422, -52)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="StaticBody2D2"]
+position = Vector2(342, 506)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+mesh = SubResource("PrismMesh_efas5")
+texture = SubResource("GradientTexture2D_l5b2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(341, 547.5)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+shape = SubResource("RectangleShape2D_nb75d")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(630, -294)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="StaticBody2D3"]
+position = Vector2(342, 506)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+mesh = SubResource("PrismMesh_efas5")
+texture = SubResource("GradientTexture2D_l5b2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(341, 547.5)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+shape = SubResource("RectangleShape2D_nb75d")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-129, -403)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="StaticBody2D5"]
+position = Vector2(342, 506)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+mesh = SubResource("PrismMesh_efas5")
+texture = SubResource("GradientTexture2D_l5b2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(341, 547.5)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+shape = SubResource("RectangleShape2D_nb75d")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(-225, -146)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="StaticBody2D6"]
+position = Vector2(342, 506)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+mesh = SubResource("PrismMesh_efas5")
+texture = SubResource("GradientTexture2D_l5b2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(341, 547.5)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+shape = SubResource("RectangleShape2D_nb75d")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2(694, -39)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="StaticBody2D8"]
+position = Vector2(342, 506)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+mesh = SubResource("PrismMesh_efas5")
+texture = SubResource("GradientTexture2D_l5b2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(341, 547.5)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+shape = SubResource("RectangleShape2D_nb75d")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+position = Vector2(24, 26)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="StaticBody2D9"]
+position = Vector2(342, 506)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+mesh = SubResource("PrismMesh_efas5")
+texture = SubResource("GradientTexture2D_l5b2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2(341, 547.5)
+rotation = 3.14159
+scale = Vector2(132.373, 106.946)
+shape = SubResource("RectangleShape2D_nb75d")
