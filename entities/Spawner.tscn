@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2oeprsu0ov1w"]
+
+[ext_resource type="Script" path="res://entities/spawner.gd" id="1_wpkab"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a24fg"]
+radius = 77.0065
+
+[node name="Spawner" type="Node2D"]
+position = Vector2(572, 369)
+script = ExtResource("1_wpkab")
+
+[node name="SpawnArea" type="Area2D" parent="."]
+
+[node name="SpawnAreaShape" type="CollisionShape2D" parent="SpawnArea"]
+shape = SubResource("CircleShape2D_a24fg")
+debug_color = Color(0.866667, 0.239216, 0.658824, 0.419608)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="RightMarker" type="Marker2D" parent="."]
+position = Vector2(77, 0)
+
+[node name="LeftMarker" type="Marker2D" parent="."]
+position = Vector2(-77, 0)
+
+[node name="UpMarker" type="Marker2D" parent="."]
+position = Vector2(0, -77)
+
+[node name="DownMarker" type="Marker2D" parent="."]
+position = Vector2(0, 77)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cups656k6tk22"]
+
+[ext_resource type="Script" path="res://singleton/battle_system.gd" id="1_ihe0e"]
+[ext_resource type="PackedScene" uid="uid://c6mamnnj6we60" path="res://entities/player/player.tscn" id="1_n8vsl"]
+[ext_resource type="PackedScene" uid="uid://b2oeprsu0ov1w" path="res://entities/Spawner.tscn" id="3_wce5h"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rpjju"]
+vertices = PackedVector2Array(669, 480, 10, 482, 10, 18, 667, 9)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 9, 0, 493, 680, 490, 677, -1)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_ihe0e")
+
+[node name="Player" parent="." instance=ExtResource("1_n8vsl")]
+position = Vector2(305, 185)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_rpjju")
+
+[node name="Spawner" parent="." instance=ExtResource("3_wce5h")]
+
+[node name="Spawner3" parent="." instance=ExtResource("3_wce5h")]
+position = Vector2(513, 86)
+
+[node name="Spawner2" parent="." instance=ExtResource("3_wce5h")]
+position = Vector2(134, 405)

@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6mamnnj6we60"]
+[gd_scene load_steps=8 format=3 uid="uid://c6mamnnj6we60"]
 
-[ext_resource type="Script" path="res://entities/player.gd" id="1_v8uey"]
+[ext_resource type="Script" path="res://entities/player/player.gd" id="1_v8uey"]
+[ext_resource type="Script" path="res://entities/player/fps_counter.gd" id="3_3yrl0"]
+[ext_resource type="PackedScene" uid="uid://chlfk5b4awy7d" path="res://components/Hurtbox.tscn" id="3_la8dn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tsnjg"]
 
@@ -15,11 +17,13 @@ gradient = SubResource("Gradient_3tp68")
 fill_from = Vector2(1, 0)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_v8uey")
-metadata/_edit_group_ = true
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+[node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_tsnjg")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -29,3 +33,13 @@ position = Vector2(-2.38419e-06, 8.64267e-06)
 scale = Vector2(18, 15)
 mesh = SubResource("CapsuleMesh_2uk1u")
 texture = SubResource("GradientTexture2D_smfb1")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -286.0
+offset_top = -161.0
+offset_right = -246.0
+offset_bottom = -138.0
+text = "FPS"
+script = ExtResource("3_3yrl0")
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_la8dn")]
